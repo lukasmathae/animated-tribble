@@ -5,10 +5,12 @@ import axios from 'axios';
 function JobForm() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+    const API_URL = process.env.REACT_APP_API_URL;
 
-  const handleSubmit = async (e) => {
+
+    const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/api/jobs', {
+    await axios.post(`${API_URL}/jobs`, {
       title,
       description,
     });
