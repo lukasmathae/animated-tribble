@@ -3,16 +3,16 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function JobForm() {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
     const API_URL = process.env.REACT_APP_API_URL;
 
-
+    const endpoint = process.env.NODE_ENV === 'production' ? `${API_URL}/api/jobs` : `${API_URL}/jobs`;
     const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(`${API_URL}/jobs`, {
-      title,
-      description,
+    await axios.post(endpoint, {
+        title,
+        description,
     });
     alert('Job listing added!');
     setTitle('');

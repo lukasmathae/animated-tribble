@@ -44,6 +44,7 @@ app.get('/api/jobs', async (req, res) => {
 });
 
 app.post('/api/jobs', async (req, res) => {
+  console.log('Received POST request at /api/jobs with body:', req.body);
   const { title, description } = req.body;
   const result = await pool.query(
     'INSERT INTO jobs (title, description) VALUES ($1, $2) RETURNING *',
