@@ -16,14 +16,19 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
-// Middleware
+
+
+
+// CORS configuration
 const allowedOrigin = process.env.CLIENT_ORIGIN;
 
 app.use(cors({
   origin: allowedOrigin,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+
 app.use(express.json());
 
 // PostgreSQL connection
