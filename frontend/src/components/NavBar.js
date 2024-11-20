@@ -13,13 +13,16 @@ const Navbar = () => {
             <div className="container mx-auto flex items-center justify-between">
                 {/* Logo */}
                 <div className="text-white font-bold text-2xl">
-                    <Link to="/">MyWebsite</Link>
+                    <Link to="/">K&L</Link>
                 </div>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-6">
                     <Link to="/" className="text-white hover:text-gray-300 transition duration-200">
                         Home
+                    </Link>
+                    <Link to="/news" className="text-white hover:text-gray-300 transition duration-200">
+                        News
                     </Link>
                     <Link to="/about" className="text-white hover:text-gray-300 transition duration-200">
                         About

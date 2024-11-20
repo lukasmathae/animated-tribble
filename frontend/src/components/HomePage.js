@@ -1,40 +1,74 @@
 import React from 'react';
-import { Carousel } from 'react-responsive-carousel';
+import {Carousel} from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import {Link} from "react-router-dom";
+
 const HomePage = () => {
     return (
         <div className="bg-gray-50 min-h-screen">
             {/* Hero Section */}
-            <section className="bg-blue-600 text-white py-20">
+            <section className="bg-blue-600 text-white py-6">
                 <div className="container mx-auto px-6 text-center">
                     <h1 className="text-5xl font-bold mb-4">Welcome to Our Community</h1>
                     <p className="text-lg mb-6">
                         Discover a vibrant marketplace where you can connect, buy, sell, and build trust with your
                         neighbors.
                     </p>
-                    <button
-                        className="bg-white text-blue-600 font-semibold px-6 py-2 rounded-md shadow-lg hover:bg-gray-200 transition duration-200">
-                        Get Started
-                    </button>
+                    {/* <Link to="/jobs" className="text-white hover:text-gray-300 transition duration-200 py-16">
+                        <button
+                            className="bg-white text-blue-600 font-semibold px-6 py-2 rounded-md shadow-lg hover:bg-gray-200 transition duration-200">
+                            Get Started
+                        </button>
+                    </Link> */}
                 </div>
 
-                {/* Image Carousel Section */}
-                <section className="py-16">
-                    <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false} showArrows={true}>
-                        <div>
-                            <img src="https://via.placeholder.com/1200x500?text=Image+1" alt="Image 1"/>
-                        </div>
-                        <div>
-                            <img src="https://via.placeholder.com/1200x500?text=Image+2" alt="Image 2"/>
-                        </div>
-                        <div>
-                            <img src="https://via.placeholder.com/1200x500?text=Image+3" alt="Image 3"/>
-                        </div>
-                    </Carousel>
-                </section>
+                <div className="container mx-auto px-6 py-3 text-center text-decoration-line: underline flex">
+                    <div className="container mx-auto px-6 text-center underline-offset-auto">
+                        <Link to="/" className="text-white hover:text-gray-300 transition duration-200 ">
+                            Home
+                        </Link>
+                    </div>
+                    <div className="container mx-auto px-6 text-center">
+                        <Link to="/news" className="text-white hover:text-gray-300 transition duration-200">
+                            News
+                        </Link>
+                    </div>
+                    <div className="container mx-auto px-6 text-center"><Link to="/about"
+                                                                              className="text-white hover:text-gray-300 transition duration-200">
+                        Field trip & Activities
+                    </Link>
+                    </div>
+                    <div className="container mx-auto px-6 text-center"><Link to="/jobs"
+                                                                              className="text-white hover:text-gray-300 transition duration-200">
+                        Jobs
+                    </Link></div>
+                    <div className="container mx-auto px-6 text-center"><Link to="/contact"
+                                                                              className="text-white hover:text-gray-300 transition duration-200">
+                        Bicycle Rental
+                    </Link></div>
+                    <div className="container mx-auto px-6 text-center"><Link to="/contact"
+                                                                              className="text-white hover:text-gray-300 transition duration-200">
+                        Rental & U-Sim
+                    </Link></div>
+                </div>
+
             </section>
 
 
+            {/* Image Carousel Section */}
+            <section className="">
+                <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false} showArrows={true}>
+                    <div>
+                        <img src="https://via.placeholder.com/1200x500?text=Image+1" alt="Image 1"/>
+                    </div>
+                    <div>
+                        <img src="https://via.placeholder.com/1200x500?text=Image+2" alt="Image 2"/>
+                    </div>
+                    <div>
+                        <img src="https://via.placeholder.com/1200x500?text=Image+3" alt="Image 3"/>
+                    </div>
+                </Carousel>
+            </section>
 
             {/* About Section */}
             <section className="py-16">
