@@ -6,11 +6,12 @@ const NewsPage = () => {
     const [searchResults, setSearchResults] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const API_URL = process.env.REACT_APP_API_URL;
+    const endpoint = process.env.NODE_ENV === 'production' ? `${API_URL}/api/news` : `${API_URL}/news`;
 
     // Fetch all news data
     const fetchNews = async () => {
         try {
-            const response = await axios.get(`${API_URL}/news`);
+            const response = await axios.get(endpoint);
             const sortedNews = response.data.sort(
                 (a, b) => new Date(b.created_at) - new Date(a.created_at)
             );
@@ -23,7 +24,7 @@ const NewsPage = () => {
     // Fetch search results
     const searchNews = async (query) => {
         try {
-            const response = await axios.get(`${API_URL}/news`, {
+            const response = await axios.get(endpoint, {
                 params: { q: query },
             });
             setSearchResults(response.data);
