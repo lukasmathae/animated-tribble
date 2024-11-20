@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import JobsPage from './components/JobForm';
 import NavBar from './components/NavBar';
+import Footer from "./components/Footer";
 import NewsPage from "./components/NewsPage";
+
 
 
 const App = () => {
@@ -17,6 +19,7 @@ const App = () => {
                 <Route path="/jobs" element={<JobsPage />} />
                 <Route path="/news" element={<NewsPage />} />
             </Routes>
+            <Footer />
         </Router>
     );
 };
