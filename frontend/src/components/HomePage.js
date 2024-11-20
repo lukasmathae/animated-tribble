@@ -21,37 +21,30 @@ const HomePage = () => {
                         </button>
                     </Link> */}
                 </div>
+            </section>
 
-                <div className="container mx-auto px-6 py-3 text-center text-decoration-line: underline flex">
-                    <div className="container mx-auto px-6 text-center underline-offset-auto">
-                        <Link to="/" className="text-white hover:text-gray-300 transition duration-200 ">
-                            Home
-                        </Link>
-                    </div>
-                    <div className="container mx-auto px-6 text-center">
-                        <Link to="/news" className="text-white hover:text-gray-300 transition duration-200">
+            <section>
+                <div className="bg-gray-100 py-4">
+                    <div className="container mx-auto flex justify-center space-x-6">
+                        <a href="/about" className="text-lg font-semibold text-blue-600 hover:text-blue-800 transition">
+                            Field trips & activities
+                        </a>
+                        <a href="/news" className="text-lg font-semibold text-blue-600 hover:text-blue-800 transition">
                             News
-                        </Link>
+                        </a>
+                        <a href="/jobs" className="text-lg font-semibold text-blue-600 hover:text-blue-800 transition">
+                            Job Postings
+                        </a>
+                        <a href="/contact"
+                           className="text-lg font-semibold text-blue-600 hover:text-blue-800 transition">
+                            Bicycle rental
+                        </a>
+                        <a href="/contact"
+                           className="text-lg font-semibold text-blue-600 hover:text-blue-800 transition">
+                            Rental & U-Sim
+                        </a>
                     </div>
-                    <div className="container mx-auto px-6 text-center"><Link to="/about"
-                                                                              className="text-white hover:text-gray-300 transition duration-200">
-                        Field trip & Activities
-                    </Link>
-                    </div>
-                    <div className="container mx-auto px-6 text-center"><Link to="/jobs"
-                                                                              className="text-white hover:text-gray-300 transition duration-200">
-                        Jobs
-                    </Link></div>
-                    <div className="container mx-auto px-6 text-center"><Link to="/contact"
-                                                                              className="text-white hover:text-gray-300 transition duration-200">
-                        Bicycle Rental
-                    </Link></div>
-                    <div className="container mx-auto px-6 text-center"><Link to="/contact"
-                                                                              className="text-white hover:text-gray-300 transition duration-200">
-                        Rental & U-Sim
-                    </Link></div>
                 </div>
-
             </section>
 
 
