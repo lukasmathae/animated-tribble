@@ -5,16 +5,20 @@ function JobForm() {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [jobs, setJobs] = useState([]);
+    const [loading, setLoading] = useState(false);
     const API_URL = process.env.REACT_APP_API_URL;
     const endpoint = process.env.NODE_ENV === 'production' ? `${API_URL}/api/jobs` : `${API_URL}/jobs`;
 
     // Memoize fetchJobs using useCallback
     const fetchJobs = useCallback(async () => {
+        setLoading(true); // Start loading
         try {
             const response = await axios.get(endpoint);
             setJobs(response.data);
         } catch (error) {
             console.error('Error fetching job listings:', error);
+        } finally {
+            setLoading(false); // End loading
         }
     }, [endpoint]);
 
@@ -66,7 +70,14 @@ function JobForm() {
             </form>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {jobs.map((job) => (
+                {loading ?
+                    (
+                        <div className="flex justify-center items-center h-64">
+                            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-600"></div>
+                            <span className="ml-4 text-lg text-blue-600">Loading jobs...</span>
+                        </div>
+                    ) : (
+                        jobs.map((job) => (
                     <div key={job.id} className="bg-white shadow-md rounded-lg overflow-hidden">
                         <img
                             src="https://via.placeholder.com/300"
@@ -78,7 +89,7 @@ function JobForm() {
                             <p className="text-gray-700 mt-2">{job.description}</p>
                         </div>
                     </div>
-                ))}
+                )))}
             </div>
         </div>
     );
