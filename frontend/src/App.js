@@ -7,6 +7,7 @@ import JobsPage from './components/JobForm';
 import NavBar from './components/NavBar';
 import Footer from "./components/Footer";
 import NewsPage from "./components/NewsPage";
+import NewsSingleArticle from "./components/NewsSingleArticle";
 
 
 
@@ -18,6 +19,7 @@ const App = () => {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/jobs" element={<JobsPage />} />
                 <Route path="/news" element={<NewsPage />} />
+                <Route path="/article/:id" element={<NewsSingleArticle />} />
             </Routes>
             <Footer />
         </Router>

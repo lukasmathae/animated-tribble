@@ -93,7 +93,25 @@ app.post('/api/news', async (req, res) => {
   }
 });
 
+app.get('/api/news/:id', async (req, res) => {
+  const { id } = req.params;
+  const value = id ? [id] : [];
+  try {
+    const query = `SELECT * from news where id = $1`;
+    const article =  await pool.query(query, value); // Replace with your DB logic
+    if (!article) {
+      return res.status(404).json({ error: 'Article not found' });
+    }
+    res.json(article.rows[0]);
+  } catch (error) {
+    console.info("The id is: ", id);
+    console.error('Error fetching article:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
+
 });

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const NewsPage = () => {
@@ -7,6 +8,7 @@ const NewsPage = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const API_URL = process.env.REACT_APP_API_URL;
     const endpoint = process.env.NODE_ENV === 'production' ? `${API_URL}/api/news` : `${API_URL}/news`;
+    const endpointArticle = process.env.NODE_ENV === 'production' ? `/api/article` : `/article`;
 
     // Fetch all news data
     const fetchNews = async () => {
@@ -25,7 +27,7 @@ const NewsPage = () => {
     const searchNews = async (query) => {
         try {
             const response = await axios.get(endpoint, {
-                params: { q: query },
+                params: {q: query},
             });
             setSearchResults(response.data);
         } catch (error) {
@@ -113,9 +115,9 @@ const NewsPage = () => {
             {/* Older News Section */}
             <section className="py-16">
                 <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {searchResults.length === 0 &&
-                        news.slice(1).map((item) => (
-                            <div key={item.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+                    {news.slice(1).map((item) => (
+                        <div key={item.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+                            <Link to={`${endpointArticle}/${item.id}`}>
                                 <img
                                     src={item.image_url || 'https://via.placeholder.com/300'}
                                     alt={item.title}
@@ -128,8 +130,9 @@ const NewsPage = () => {
                                         {new Date(item.created_at).toLocaleDateString()}
                                     </p>
                                 </div>
-                            </div>
-                        ))}
+                            </Link>
+                        </div>
+                    ))}
                 </div>
             </section>
         </div>
