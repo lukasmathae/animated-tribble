@@ -25,7 +25,7 @@ const HomePage = () => {
 
             <section>
                 <div className="bg-gray-100 py-4">
-                    <div className="container mx-auto flex justify-center space-x-6">
+                    <div className="container mx-auto flex flex-wrap justify-center gap-4 px-4 text-center">
                         <a href="/about" className="text-lg font-semibold text-blue-600 hover:text-blue-800 transition">
                             Field trips & activities
                         </a>

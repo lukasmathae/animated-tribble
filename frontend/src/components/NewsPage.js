@@ -117,7 +117,7 @@ const NewsPage = () => {
                 <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {news.slice(1).map((item) => (
                         <div key={item.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
-                            <Link to={`${endpointArticle}/${item.id}`}>
+                            <Link to={`/article/${item.id}`}>
                                 <img
                                     src={item.image_url || 'https://via.placeholder.com/300'}
                                     alt={item.title}
