@@ -38,7 +38,7 @@ const pool = new Pool({
 // Jobs Routes
 app.get('/api/jobs', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM jobs');
+    const result = await pool.query('SELECT * FROM jobs WHERE approved = true');
     res.json(result.rows);
   } catch (error) {
     console.error('Error fetching jobs:', error);
