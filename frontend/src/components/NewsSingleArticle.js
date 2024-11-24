@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const ArticleDetail = () => {
@@ -46,6 +46,14 @@ const ArticleDetail = () => {
                     <p>{article.content}</p>
                 </div>
             </div>
+
+            <div>
+                <Link to="/news">
+                    <button className="bg-blue-600 mx-auto flex items-center justify-between text-white font-semibold px-8 py-3 rounded-md shadow-lg hover:bg-blue-700 transition duration-200">
+                        Back</button>
+                </Link>
+            </div>
+
         </div>
     );
 };
