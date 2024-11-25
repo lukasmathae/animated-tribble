@@ -13,8 +13,10 @@ const Navbar = () => {
             <div className="container mx-auto flex items-center justify-between">
                 {/* Logo */}
                 <div className="text-white font-bold text-2xl flex space-x-3">
-                    <img src={logo} className="App-logo rounded-full mx-auto my-auto" alt="logo" width="40" height="40" />
-                    <Link to="/">K&L</Link>
+                    <Link to="/" className="flex space-x-3">
+                    <img src={logo} className="App-logo rounded-full mx-auto my-auto space-x-3" alt="logo" width="40" height="40" />
+                    K&L
+                    </Link>
                 </div>
 
                 {/* Desktop Menu */}
@@ -60,7 +62,7 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             <div
-                className={`fixed top-0 right-0 h-full bg-blue-700 text-white w-64 transform ${
+                className={`fixed top-0 right-0 h-full bg-gray-700 text-white w-64 transform ${
                     isOpen ? "translate-x-0" : "translate-x-full"
                 } transition-transform duration-300 ease-in-out z-40`}
             >
