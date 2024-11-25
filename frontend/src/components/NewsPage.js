@@ -47,16 +47,16 @@ const NewsPage = () => {
     };
 
     return (
-        <div className="bg-gray-50 min-h-screen">
+        <div className="bg-gray-50 min-h-screen mt-16">
             {/* Hero Section */}
             {loading ? (
                 <div className="flex justify-center items-center h-64">
-                    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-600"></div>
-                    <span className="ml-4 text-lg text-blue-600">Loading news...</span>
+                    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-gray-600"></div>
+                    <span className="ml-4 text-lg text-gray-600">Loading news...</span>
                 </div>
             ) : (
                 news.length > 0 && (
-                    <section className="bg-blue-600 text-white py-20">
+                    <section className="bg-gray-600 text-white py-20">
                         <div className="container mx-auto px-6 text-center">
                             <h1 className="text-5xl font-bold mb-4">{news[0].title}</h1>
                             <p className="text-lg mb-6">{news[0].content}</p>
@@ -85,7 +85,7 @@ const NewsPage = () => {
                         />
                         <button
                             type="submit"
-                            className="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700"
+                            className="bg-gray-600 text-white px-4 py-2 rounded-r-lg hover:bg-gray-700"
                         >
                             Search
                         </button>

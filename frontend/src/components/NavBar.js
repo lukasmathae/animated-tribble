@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import logo from "../logo.jpg"
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -9,10 +9,11 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-blue-600 p-4 shadow-lg">
+        <nav className="fixed top-0 left-0 w-full bg-gray-600 p-4 shadow-lg z-50">
             <div className="container mx-auto flex items-center justify-between">
                 {/* Logo */}
-                <div className="text-white font-bold text-2xl">
+                <div className="text-white font-bold text-2xl flex space-x-3">
+                    <img src={logo} className="App-logo rounded-full mx-auto my-auto" alt="logo" width="40" height="40" />
                     <Link to="/">K&L</Link>
                 </div>
 
@@ -58,27 +59,48 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden">
-                    <div className="flex flex-col space-y-4 mt-4 text-center">
-                        <Link to="/" className="text-white hover:text-gray-300">
-                            Home
-                        </Link>
-                        <Link to="/about" className="text-white hover:text-gray-300">
-                            About
-                        </Link>
-                        <Link to="/news" className="text-white hover:text-gray-300">
-                            News
-                        </Link>
-                        <Link to="/jobs" className="text-white hover:text-gray-300">
-                            Jobs
-                        </Link>
-                        <Link to="/contact" className="text-white hover:text-gray-300">
-                            Contact
-                        </Link>
-                    </div>
+            <div
+                className={`fixed top-0 right-0 h-full bg-blue-700 text-white w-64 transform ${
+                    isOpen ? "translate-x-0" : "translate-x-full"
+                } transition-transform duration-300 ease-in-out z-40`}
+            >
+                <button
+                    className="absolute top-4 right-4 text-white focus:outline-none"
+                    onClick={toggleMenu}
+                >
+                    <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
+                <div className="flex flex-col space-y-6 mt-16 text-center">
+                    <Link to="/" className="text-white hover:text-gray-300">
+                        Home
+                    </Link>
+                    <Link to="/about" className="text-white hover:text-gray-300">
+                        About
+                    </Link>
+                    <Link to="/news" className="text-white hover:text-gray-300">
+                        News
+                    </Link>
+                    <Link to="/jobs" className="text-white hover:text-gray-300">
+                        Jobs
+                    </Link>
+                    <Link to="/contact" className="text-white hover:text-gray-300">
+                        Contact
+                    </Link>
                 </div>
-            )}
+            </div>
         </nav>
     );
 };

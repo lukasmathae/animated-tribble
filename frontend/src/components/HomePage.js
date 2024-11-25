@@ -6,43 +6,62 @@ import {Link} from "react-router-dom";
 const HomePage = () => {
     return (
         <div className="bg-gray-50 min-h-screen">
-            {/* Hero Section */}
-            <section className="bg-blue-600 text-white py-6">
-                <div className="container mx-auto px-6 text-center">
-                    <h1 className="text-5xl font-bold mb-4">Welcome to Our Community</h1>
-                    <p className="text-lg mb-6">
-                        Discover a vibrant marketplace where you can connect, buy, sell, and build trust with your
-                        neighbors.
-                    </p>
-                    {/* <Link to="/jobs" className="text-white hover:text-gray-300 transition duration-200 py-16">
-                        <button
-                            className="bg-white text-blue-600 font-semibold px-6 py-2 rounded-md shadow-lg hover:bg-gray-200 transition duration-200">
-                            Get Started
-                        </button>
-                    </Link> */}
-                </div>
-            </section>
+            {/* Search Bar */}
 
-            <section>
+            <section className="mt-16">
                 <div className="bg-gray-100 py-4">
-                    <div className="container mx-auto flex flex-wrap justify-center gap-4 px-4 text-center">
-                        <a href="/about" className="text-lg font-semibold text-blue-600 hover:text-blue-800 transition">
+                    <div
+                        className="container mx-auto flex flex-wrap text-gray-600 justify-center gap-8 px-4 text-center">
+                        <Link
+                            to="/about"
+                            className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition"
+                        >
+                            <div
+                                className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
+                                🏞️
+                            </div>
                             Field trips & activities
-                        </a>
-                        <a href="/news" className="text-lg font-semibold text-blue-600 hover:text-blue-800 transition">
+                        </Link>
+                        <Link
+                            to="/news"
+                            className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition"
+                        >
+                            <div
+                                className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
+                                📰
+                            </div>
                             News
-                        </a>
-                        <a href="/jobs" className="text-lg font-semibold text-blue-600 hover:text-blue-800 transition">
+                        </Link>
+                        <Link
+                            to="/jobs"
+                            className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition"
+                        >
+                            <div
+                                className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
+                                💼
+                            </div>
                             Job Postings
-                        </a>
-                        <a href="/contact"
-                           className="text-lg font-semibold text-blue-600 hover:text-blue-800 transition">
+                        </Link>
+                        <Link
+                            to="/contact"
+                            className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition"
+                        >
+                            <div
+                                className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
+                                🚲
+                            </div>
                             Bicycle rental
-                        </a>
-                        <a href="/contact"
-                           className="text-lg font-semibold text-blue-600 hover:text-blue-800 transition">
+                        </Link>
+                        <Link
+                            to="/contact"
+                            className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition"
+                        >
+                            <div
+                                className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
+                                📱
+                            </div>
                             Rental & U-Sim
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -68,7 +87,8 @@ const HomePage = () => {
                 <div className="container mx-auto px-6">
                     <h2 className="text-3xl font-bold text-gray-800 mb-6">About Us</h2>
                     <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                        Our platform is designed to bring communities together, making it easy to find great deals, sell
+                        Our platform is designed to bring communities together, making it easy to find great deals,
+                        sell
                         your items, and connect with people around you.
                         We believe in building trust and making local transactions safer and more convenient for
                         everyone.
@@ -84,7 +104,8 @@ const HomePage = () => {
                         <div className="bg-white p-6 shadow-lg rounded-lg">
                             <h3 className="text-2xl font-semibold mb-4">Join Our Community</h3>
                             <p className="text-gray-700">
-                                Signing up is easy and free! Become part of a trusted network of users who buy, sell,
+                                Signing up is easy and free! Become part of a trusted network of users who buy,
+                                sell,
                                 and support each other every day.
                             </p>
                         </div>
@@ -93,14 +114,14 @@ const HomePage = () => {
             </section>
 
             {/* Call to Action Section */}
-            <section className="bg-blue-100 py-16">
+            <section className="bg-gray-100 py-16">
                 <div className="container mx-auto px-6 text-center">
                     <h2 className="text-3xl font-bold text-gray-800 mb-4">Ready to Start?</h2>
                     <p className="text-lg text-gray-600 mb-6">
                         Create an account today and experience the best of local buying and selling.
                     </p>
                     <button
-                        className="bg-blue-600 text-white font-semibold px-8 py-3 rounded-md shadow-lg hover:bg-blue-700 transition duration-200">
+                        className="bg-gray-600 text-white font-semibold px-8 py-3 rounded-md shadow-lg hover:bg-gray-700 transition duration-200">
                         Sign Up Now
                     </button>
                 </div>

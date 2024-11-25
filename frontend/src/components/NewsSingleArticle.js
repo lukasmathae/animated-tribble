@@ -22,14 +22,14 @@ const ArticleDetail = () => {
     }, [id]);
 
     if (!article) {
-        return <div className="flex justify-center items-center h-64">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-600"></div>
-            <span className="ml-4 text-lg text-blue-600">Loading article...</span>
+        return <div className="flex justify-center items-center h-64 mt-16">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-gray-600"></div>
+            <span className="ml-4 text-lg text-gray-600">Loading article...</span>
         </div>;
     }
 
     return (
-        <div className="bg-gray-50 min-h-screen">
+        <div className="bg-gray-50 min-h-screenmt-16">
             <div className="container mx-auto px-6 py-16">
                 <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
                 <p className="text-gray-600 text-sm mb-6">
@@ -49,7 +49,7 @@ const ArticleDetail = () => {
 
             <div>
                 <Link to="/news">
-                    <button className="bg-blue-600 mx-auto flex items-center justify-between text-white font-semibold px-8 py-3 rounded-md shadow-lg hover:bg-blue-700 transition duration-200">
+                    <button className="bg-gray-600 mx-auto flex items-center justify-between text-white font-semibold px-8 py-3 rounded-md shadow-lg hover:bg-gray-700 transition duration-200">
                         Back</button>
                 </Link>
             </div>
