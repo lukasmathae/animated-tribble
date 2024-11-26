@@ -11,36 +11,43 @@ const HomePage = () => {
             <section className="mt-16 py-4">
                 <div className="bg-white-100 py-4">
                     <div className="container mx-auto">
-                        <div className="flex flex-row gap-8 overflow-x-auto whitespace-nowrap text-gray-600 text-center scrollbar-hide px-4">
-                            <Link to="/about" className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
+                        {/* Add a responsive wrapper */}
+                        <div
+                            className="flex flex-wrap md:flex-nowrap gap-8 overflow-x-auto md:overflow-visible whitespace-nowrap text-gray-600 text-center scrollbar-hide px-4 md:justify-center">
+                            <Link to="/about"
+                                  className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
                                 <div
                                     className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
                                     🏞️
                                 </div>
                                 Activities
                             </Link>
-                            <Link to="/news" className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
+                            <Link to="/news"
+                                  className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
                                 <div
                                     className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
                                     📰
                                 </div>
                                 News
                             </Link>
-                            <Link to="/jobs" className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
+                            <Link to="/jobs"
+                                  className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
                                 <div
                                     className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
                                     💼
                                 </div>
                                 Job
                             </Link>
-                            <Link to="/contact" className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
+                            <Link to="/contact"
+                                  className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
                                 <div
                                     className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
                                     🚲
                                 </div>
                                 Rental
                             </Link>
-                            <Link to="/contact" className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
+                            <Link to="/contact"
+                                  className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
                                 <div
                                     className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
                                     📱
