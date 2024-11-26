@@ -13,7 +13,7 @@ const HomePage = () => {
                     <div className="container mx-auto">
                         {/* Add a responsive wrapper */}
                         <div
-                            className="flex flex-wrap md:flex-nowrap gap-8 overflow-x-auto md:overflow-visible whitespace-nowrap text-center scrollbar-hide px-4 md:justify-center">
+                            className="flex flex-wrap md:flex-nowrap gap-8 overflow-x-auto md:overflow-visible whitespace-nowrap text-gray-600 text-center scrollbar-hide px-4 md:justify-center">
                             <Link to="/about"
                                   className="flex flex-col items-center text-gray-500 text-lg font-semibold hover:text-black transition">
                                 <div className="border-2 border-gray-200 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-gray-500 transition duration-200">
