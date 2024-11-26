@@ -15,40 +15,41 @@ const HomePage = () => {
                         <div
                             className="flex flex-wrap md:flex-nowrap gap-8 overflow-x-auto md:overflow-visible whitespace-nowrap text-gray-600 text-center scrollbar-hide px-4 md:justify-center">
                             <Link to="/about"
-                                  className="flex flex-col items-center text-gray-500 text-lg font-semibold hover:text-black transition">
-                                <div className="border-2 border-gray-200 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-gray-500 transition duration-200">
+                                  className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
+                                <div
+                                    className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
                                     🏞️
                                 </div>
                                 Activities
                             </Link>
                             <Link to="/news"
-                                  className="flex flex-col text-gray-500 items-center text-lg font-semibold hover:text-black transition">
+                                  className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
                                 <div
-                                    className="border-2 border-gray-200 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-gray-500 transition duration-200">
+                                    className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
                                     📰
                                 </div>
                                 News
                             </Link>
                             <Link to="/jobs"
-                                  className="flex flex-col text-gray-500 items-center text-lg font-semibold hover:text-black transition">
+                                  className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
                                 <div
-                                    className="border-2 border-gray-200 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-gray-500 transition duration-200">
+                                    className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
                                     💼
                                 </div>
                                 Job
                             </Link>
                             <Link to="/contact"
-                                  className="flex flex-col text-gray-500 items-center text-lg font-semibold hover:text-black transition">
+                                  className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
                                 <div
-                                     className="border-2 border-gray-200 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-gray-500 transition duration-200">
+                                    className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
                                     🚲
                                 </div>
                                 Rental
                             </Link>
                             <Link to="/contact"
-                                  className="flex flex-col text-gray-500 items-center text-lg font-semibold hover:text-black transition">
+                                  className="flex flex-col items-center text-lg font-semibold hover:text-blue-800 transition">
                                 <div
-                                    className="border-2 border-gray-200 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-gray-500 transition duration-200">
+                                    className="border-2 border-gray-300 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-black transition duration-200">
                                     📱
                                 </div>
                                 U-Sim
