@@ -35,7 +35,7 @@ const NewsPage = () => {
         if (searchQuery.trim()) {
             try {
                 const response = await axios.get(endpoint, {
-                    params: {q: searchQuery},
+                    params: { q: searchQuery },
                 });
                 setSearchResults(response.data);
             } catch (error) {
@@ -93,8 +93,9 @@ const NewsPage = () => {
                 </div>
             </section>
 
-            {/* Search Results Section */}
-            {searchResults.length > 0 && (
+            {/* Conditional Rendering */}
+            {searchResults.length > 0 ? (
+                // Search Results Section
                 <section className="py-8">
                     <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {searchResults.map((item) => (
@@ -115,32 +116,32 @@ const NewsPage = () => {
                         ))}
                     </div>
                 </section>
-            )}
-
-            {/* Older News Section */}
-            {!loading && (
-                <section className="py-16">
-                    <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {news.slice(1).map((item) => (
-                            <div key={item.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
-                                <Link to={`/article/${item.id}`}>
-                                    <img
-                                        src={item.image_url || 'https://via.placeholder.com/300'}
-                                        alt={item.title}
-                                        className="w-full h-48 object-cover"
-                                    />
-                                    <div className="p-4">
-                                        <h2 className="text-lg font-semibold">{item.title}</h2>
-                                        <p className="text-gray-700 mt-2 text-sm truncate">{item.content}</p>
-                                        <p className="text-gray-500 text-sm mt-2">
-                                            {new Date(item.created_at).toLocaleDateString()}
-                                        </p>
-                                    </div>
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
-                </section>
+            ) : (
+                // Older News Section
+                !loading && (
+                    <section className="py-16">
+                        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {news.slice(1).map((item) => (
+                                <div key={item.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+                                    <Link to={`/article/${item.id}`}>
+                                        <img
+                                            src={item.image_url || 'https://via.placeholder.com/300'}
+                                            alt={item.title}
+                                            className="w-full h-48 object-cover"
+                                        />
+                                        <div className="p-4">
+                                            <h2 className="text-lg font-semibold">{item.title}</h2>
+                                            <p className="text-gray-700 mt-2 text-sm truncate">{item.content}</p>
+                                            <p className="text-gray-500 text-sm mt-2">
+                                                {new Date(item.created_at).toLocaleDateString()}
+                                            </p>
+                                        </div>
+                                    </Link>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )
             )}
         </div>
     );
