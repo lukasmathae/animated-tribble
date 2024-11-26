@@ -9,7 +9,7 @@ const HomePage = () => {
             {/* Search Bar */}
 
             <section className="mt-16 py-4">
-                <div className="bg-white py-4">
+                <div className="bg-gray-50 py-4">
                     <div className="container mx-auto">
                         <div
                             className="flex gap-8 overflow-x-auto whitespace-nowrap text-gray-600 text-center px-4 scrollbar-hide">
