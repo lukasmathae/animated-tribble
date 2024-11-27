@@ -6,13 +6,64 @@ import {Link} from "react-router-dom";
 const HomePage = () => {
     return (
         <div className="bg-gray-50 min-h-screen">
-            {/* Search Bar */}
 
-            <section className="mt-16 py-4">
+            {/* Mobile-Only Section */}
+            <section className="block md:hidden mt-16 py-4">
                 <div className="bg-gray-50 py-4">
                     <div className="container mx-auto">
                         <div
                             className="flex gap-8 overflow-x-auto whitespace-nowrap text-gray-600 text-center px-4 scrollbar-hide">
+                            <Link to="/about"
+                                  className="flex flex-col items-center text-gray-500 text-lg font-semibold hover:text-black transition">
+                                <div
+                                    className="border-2 border-gray-200 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-gray-500 transition duration-200">
+                                    🏞️
+                                </div>
+                                Activities
+                            </Link>
+                            <Link to="/news"
+                                  className="flex flex-col items-center text-gray-500 text-lg font-semibold hover:text-black transition">
+                                <div
+                                    className="border-2 border-gray-200 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-gray-500 transition duration-200">
+                                    📰
+                                </div>
+                                News
+                            </Link>
+                            <Link to="/jobs"
+                                  className="flex flex-col items-center text-gray-500 text-lg font-semibold hover:text-black transition">
+                                <div
+                                    className="border-2 border-gray-200 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-gray-500 transition duration-200">
+                                    💼
+                                </div>
+                                Job
+                            </Link>
+                            <Link to="/contact"
+                                  className="flex flex-col items-center text-gray-500 text-lg font-semibold hover:text-black transition">
+                                <div
+                                    className="border-2 border-gray-200 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-gray-500 transition duration-200">
+                                    🚲
+                                </div>
+                                Rental
+                            </Link>
+                            <Link to="/contact"
+                                  className="flex flex-col items-center text-gray-500 text-lg font-semibold hover:text-black transition">
+                                <div
+                                    className="border-2 border-gray-200 w-16 h-16 flex items-center justify-center rounded-full mb-2 hover:border-gray-500 transition duration-200">
+                                    📱
+                                </div>
+                                U-Sim
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Desktop-Only Section */}
+            <section className="hidden md:block mt-16 py-4">
+                <div className="bg-gray-50 py-4">
+                    <div className="container mx-auto">
+                        <div
+                            className="justify-center item-center flex gap-8 overflow-x-auto whitespace-nowrap text-gray-600 text-center px-4 scrollbar-hide">
                             <Link to="/about"
                                   className="flex flex-col items-center text-gray-500 text-lg font-semibold hover:text-black transition">
                                 <div
