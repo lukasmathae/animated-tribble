@@ -9,13 +9,18 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full bg-gray-600 p-4 shadow-lg z-50">
+        <nav className="fixed top-0 left-0 w-full bg-gradient-to-r from-green-400 to-blue-500 p-4 shadow-lg z-50">
             <div className="container mx-auto flex items-center justify-between">
                 {/* Logo */}
-                <div className="text-white font-bold text-2xl flex space-x-3">
-                    <Link to="/" className="flex space-x-3">
-                    <img src={logo} className="App-logo rounded-full mx-auto my-auto space-x-3" alt="logo" width="40" height="40" />
-                    K&L
+                <div className="text-white font-bold text-2xl flex">
+                    <Link to="/" className="flex space-x-2">
+                        <div>
+                            <img src={logo} className="App-logo rounded-full mx-auto my-auto space-x-3" alt="logo"
+                                 width="40" height="40"/>
+                        </div>
+                        <div className="text-white font-bold text-2xl flex y">
+                            K&L
+                        </div>
                     </Link>
                 </div>
 
@@ -44,7 +49,7 @@ const Navbar = () => {
                     onClick={toggleMenu}
                 >
                     <svg
-                        className="w-6 h-6"
+                        className="w-8 h-8"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -62,7 +67,7 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             <div
-                className={`fixed top-0 right-0 h-full bg-gray-700 text-white w-64 transform ${
+                className={`fixed top-0 right-0 h-full bg-gradient-to-r from-green-400 to-blue-500 text-white w-64 transform ${
                     isOpen ? "translate-x-0" : "translate-x-full"
                 } transition-transform duration-300 ease-in-out z-40`}
             >

@@ -29,7 +29,7 @@ const ArticleDetail = () => {
     }
 
     return (
-        <div className="bg-gray-50 min-h-screenmt-16">
+        <div className="bg-gray-50 min-h-screenmt-16 mt-14 py-4">
             <div className="container mx-auto px-6 py-16">
                 <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
                 <p className="text-gray-600 text-sm mb-6">

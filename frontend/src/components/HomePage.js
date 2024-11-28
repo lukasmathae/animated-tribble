@@ -1,4 +1,5 @@
 import React from 'react';
+import "../CarouselStyle.css"
 import {Carousel} from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import {Link} from "react-router-dom";
@@ -157,7 +158,7 @@ const HomePage = () => {
             </section>
 
             {/* Call to Action Section */}
-            <section className="bg-gray-100 py-16">
+            <section className="bg-gradient-to-r from-green-400 to-blue-500 py-16">
                 <div className="container mx-auto px-6 text-center">
                     <h2 className="text-3xl font-bold text-gray-800 mb-4">Ready to Start?</h2>
                     <p className="text-lg text-gray-600 mb-6">
