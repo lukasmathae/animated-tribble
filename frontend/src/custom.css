@@ -1,0 +1,6 @@
+/* Reduce the size of indicator dots */
+.carousel .control-dots .dot {
+    width: 10px; /* Adjust size */
+    height: 10px; /* Adjust size */
+    margin: 0 5px; /* Adjust spacing */
+}

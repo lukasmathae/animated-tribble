@@ -56,7 +56,7 @@ const NewsPage = () => {
                 </div>
             ) : (
                 news.length > 0 && (
-                    <section className="bg-gradient-to-r from-green-400 to-blue-500 text-white py-20">
+                    <section className="bg-custom-gradient text-white py-20">
                         <div className="container mx-auto px-6 text-center">
                             <h1 className="text-5xl font-bold mb-4">{news[0].title}</h1>
                             <p className="text-lg mb-6">{news[0].content}</p>

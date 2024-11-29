@@ -3,6 +3,7 @@ import "../CarouselStyle.css"
 import {Carousel} from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import {Link} from "react-router-dom";
+import "../custom.css"
 
 const HomePage = () => {
     return (
@@ -124,6 +125,9 @@ const HomePage = () => {
                         <img src="https://via.placeholder.com/1200x500?text=Image+3" alt="Image 3"/>
                     </div>
                 </Carousel>
+                <div className='relative bottom-10 left-5 sm:bottom-20 sm:left-10 text-yellow-500 font-style: italic font-bold text-lg sm:text-6xl font-bold'>
+                    Welcome to K&L
+                </div>
             </section>
 
             {/* About Section */}
@@ -158,7 +162,7 @@ const HomePage = () => {
             </section>
 
             {/* Call to Action Section */}
-            <section className="bg-gradient-to-r from-green-400 to-blue-500 py-16">
+            <section className="bg-custom-gradient py-16">
                 <div className="container mx-auto px-6 text-center">
                     <h2 className="text-3xl font-bold text-gray-800 mb-4">Ready to Start?</h2>
                     <p className="text-lg text-gray-600 mb-6">

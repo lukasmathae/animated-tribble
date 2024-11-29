@@ -9,7 +9,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full bg-gradient-to-r from-green-400 to-blue-500 p-4 shadow-lg z-50">
+        <nav className="fixed top-0 left-0 w-full bg-custom-gradient p-4 shadow-lg z-50">
             <div className="container mx-auto flex items-center justify-between">
                 {/* Logo */}
                 <div className="text-white font-bold text-2xl flex">
@@ -25,7 +25,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex space-x-6">
+                <div className="hidden md:flex space-x-6 font-bold">
                     <Link to="/" className="text-white hover:text-gray-300 transition duration-200">
                         Home
                     </Link>
@@ -67,7 +67,7 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             <div
-                className={`fixed top-0 right-0 h-full bg-gradient-to-r from-green-400 to-blue-500 text-white w-64 transform ${
+                className={`fixed top-0 right-0 h-full bg-custom-gradient text-white w-64 transform ${
                     isOpen ? "translate-x-0" : "translate-x-full"
                 } transition-transform duration-300 ease-in-out z-40`}
             >
