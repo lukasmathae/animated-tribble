@@ -141,6 +141,7 @@ const HomePage = () => {
                         We believe in building trust and making local transactions safer and more convenient for
                         everyone.
                     </p>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="bg-white p-6 shadow-lg rounded-lg">
                             <h3 className="text-2xl font-semibold mb-4">Why Choose Us?</h3>
