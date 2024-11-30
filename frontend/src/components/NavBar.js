@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import React, {useState} from "react";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import logo from "../logo.jpg";
 import axios from "axios";
 
@@ -7,7 +7,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false); // Mobile menu toggle
     const [searchOpen, setSearchOpen] = useState(false); // Mobile search bar toggle
     const [searchQuery, setSearchQuery] = useState('');
-    const { id } = useParams();
+    const {id} = useParams();
     const [searchResults, setSearchResults] = useState([]);
     const API_URL = process.env.REACT_APP_API_URL;
     const endpoint = process.env.NODE_ENV === 'production' ? `${API_URL}/api/news` : `${API_URL}/news`;
@@ -20,7 +20,7 @@ const Navbar = () => {
         e.preventDefault();
         if (searchQuery.trim()) {
             try {
-                const response = await axios.get(endpoint, { params: { q: searchQuery } });
+                const response = await axios.get(endpoint, {params: {q: searchQuery}});
                 navigate("/search");
                 setSearchQuery("");
                 setSearchResults(response.data);
@@ -34,8 +34,8 @@ const Navbar = () => {
         <nav className="fixed top-0 left-0 w-full bg-custom-gradient p-4 shadow-lg z-50">
             <div className="container mx-auto flex items-center justify-between">
                 {/* Logo */}
-                <Link to="/" className="flex items-center">
-                    <img src={logo} alt="logo" className="rounded-full" width="40" height="40" />
+                <Link to="/" className="flex items-center space-x-2">
+                    <img src={logo} alt="logo" className="rounded-full" width="40" height="40"/>
                     <span className="text-white font-bold text-2xl">K&L</span>
                 </Link>
 
@@ -92,12 +92,8 @@ const Navbar = () => {
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
                         >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M11 4a7 7 0 100 14a7 7 0 000-14zm0 0l7 7"
-                            />
+                            <circle cx="10" cy="10" r="6" strokeWidth="2"/>
+                            <line x1="15" y1="15" x2="20" y2="20" strokeWidth="2" strokeLinecap="round"/>
                         </svg>
                     </button>
                     {/* Hamburger Menu */}
@@ -129,7 +125,7 @@ const Navbar = () => {
 
             {/* Mobile Search Bar */}
             {searchOpen && (
-                <div className="p-4 text-white">
+                <div className="p-4 text-black">
                     <form onSubmit={handleSearch} className="flex">
                         <input
                             type="text"
@@ -150,7 +146,8 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="bg-custom-gradient text-white fixed top-0 right-0 h-full w-64 z-40 transform transition-transform duration-300 ease-in-out">
+                <div
+                    className="bg-custom-gradient text-white fixed top-0 right-0 h-full w-64 z-40 transform transition-transform duration-300 ease-in-out">
                     <button
                         onClick={toggleMenu}
                         className="absolute top-4 right-4 text-white px-4"
