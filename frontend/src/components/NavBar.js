@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {Link, useNavigate, useParams} from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Link, useLocation, useNavigate, useParams} from "react-router-dom";
 import logo from "../logo.jpg";
 import axios from "axios";
 
@@ -12,6 +12,7 @@ const Navbar = () => {
     const API_URL = process.env.REACT_APP_API_URL;
     const endpoint = process.env.NODE_ENV === 'production' ? `${API_URL}/api/news` : `${API_URL}/news`;
     const navigate = useNavigate();
+    const location = useLocation();
 
     const toggleMenu = () => setIsOpen(!isOpen);
     const toggleSearch = () => setSearchOpen(!searchOpen);
@@ -29,6 +30,10 @@ const Navbar = () => {
             }
         }
     };
+
+    useEffect(() => {
+        setIsOpen(false); // Close the menu on route change
+    }, [location]);
 
     return (
         <nav className="fixed top-0 left-0 w-full bg-custom-gradient p-4 shadow-lg z-50">
