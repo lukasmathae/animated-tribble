@@ -14,7 +14,7 @@ import SearchResults from "./components/SearchResults";
 const App = () => {
     return (
         <Router>
-            <NavBar />  {/* Add NavBar here */}
+            <NavBar />
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/jobs" element={<JobsPage />} />

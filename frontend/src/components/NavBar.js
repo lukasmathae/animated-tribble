@@ -79,7 +79,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Icons */}
-                <div className="flex items-center md:hidden space-x-4 px-4">
+                <div className="flex items-center md:hidden space-x-4">
                     {/* Search Icon */}
                     <button
                         onClick={toggleSearch}
@@ -150,7 +150,7 @@ const Navbar = () => {
                     className="bg-custom-gradient text-white fixed top-0 right-0 h-full w-64 z-40 transform transition-transform duration-300 ease-in-out">
                     <button
                         onClick={toggleMenu}
-                        className="absolute top-4 right-4 text-white px-4"
+                        className="absolute top-4 right-4 text-white"
                     >
                         <svg
                             className="w-6 h-6"

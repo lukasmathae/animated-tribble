@@ -1,13 +1,10 @@
 import React from 'react';
-import "../CarouselStyle.css"
 import {Carousel} from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import {Link} from "react-router-dom";
-import "../custom.css"
 
 const HomePage = () => {
     return (
-        <div className="bg-gray-50 min-h-screen">
+        <div className="bg-gray-50 min-h-screen overflow-hidden">
 
             {/* Mobile-Only Section */}
             <section className="block md:hidden mt-16 py-4">
