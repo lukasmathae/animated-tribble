@@ -26,7 +26,7 @@ const Navbar = ({ adjustContent }) => {
 
     useEffect(() => {
         // Adjust content only when the search bar is open
-        adjustContent(searchOpen);
+        adjustContent(searchOpen ? 100 : 0); // Adjust content by 100px or 0px depending on searchOpen
     }, [searchOpen, adjustContent]);
 
     useEffect(() => {
@@ -34,7 +34,11 @@ const Navbar = ({ adjustContent }) => {
     }, [location]);
 
     return (
-        <nav className="fixed top-0 left-0 w-full bg-custom-gradient p-4 shadow-lg z-50">
+        <nav
+            className={`fixed top-0 left-0 w-full bg-custom-gradient shadow-lg z-50 transition duration-200 ${
+                searchOpen ? "p-4 pb-8" : "p-4"
+            }`}
+        >
             <div className="container mx-auto flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center space-x-2">

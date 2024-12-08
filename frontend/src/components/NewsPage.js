@@ -47,7 +47,7 @@ const NewsPage = () => {
     };
 
     return (
-        <div className="bg-gray-50 min-h-screen mt-16">
+        <div className="bg-gray-50 min-h-screen">
             {/* Hero Section */}
             {loading ? (
                 <div className="flex justify-center items-center h-64">
@@ -56,7 +56,7 @@ const NewsPage = () => {
                 </div>
             ) : (
                 news.length > 0 && (
-                    <section className="bg-custom-gradient text-white py-20">
+                    <section className="bg-custom-gradient text-white py-8">
                         <div className="container mx-auto px-6 text-center">
                             <h1 className="text-5xl font-bold mb-4">{news[0].title}</h1>
                             <p className="text-lg mb-6">{news[0].content}</p>
