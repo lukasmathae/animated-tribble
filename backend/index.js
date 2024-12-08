@@ -150,10 +150,6 @@ app.get('/api/search', async (req, res) => {
         // Execute the query with parameterized input
         const results = await pool.query(query, [searchTerm]);
 
-        if (results.rows.length === 0) {
-            return res.status(404).json({ error: 'No results found' });
-        }
-
         res.json(results.rows);
     } catch (error) {
         console.error('Error in search:', error.message);
