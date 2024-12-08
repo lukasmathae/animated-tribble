@@ -1,6 +1,9 @@
 import React from 'react';
+import "../CarouselStyle.css"
 import {Carousel} from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import {Link} from "react-router-dom";
+import "../custom.css"
 
 const HomePage = () => {
     return (
