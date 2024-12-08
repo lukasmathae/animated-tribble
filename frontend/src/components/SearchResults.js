@@ -42,7 +42,7 @@ const SearchResults = () => {
     }, [location]);
 
     return (
-        <div className="container mx-auto mt-20 py-4">
+        <div className="container mx-auto py-4">
             <h1 className="text-2xl font-bold mb-4">Search Results for "{query}"</h1>
             {loading ? (
                 <div className="flex justify-center items-center h-64">

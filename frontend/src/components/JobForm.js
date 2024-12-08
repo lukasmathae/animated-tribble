@@ -42,7 +42,7 @@ function JobForm() {
     };
 
     return (
-        <div className="container mx-auto p-4 mt-16">
+        <div className="container mx-auto p-4">
             <form onSubmit={handleSubmit} className="mb-6 bg-white shadow-md rounded-lg p-4">
                 <h2 className="text-xl font-bold mb-4">Add Job Listing</h2>
                 <input

@@ -10,7 +10,7 @@ const HomePage = () => {
         <div className="bg-gray-50 min-h-screen overflow-hidden">
 
             {/* Mobile-Only Section */}
-            <section className="block md:hidden mt-16 py-4">
+            <section className="block md:hidden py-4">
                 <div className="bg-gray-50 py-4">
                     <div className="container mx-auto">
                         <div
@@ -61,7 +61,7 @@ const HomePage = () => {
             </section>
 
             {/* Desktop-Only Section */}
-            <section className="hidden md:block mt-16 py-4">
+            <section className="hidden md:block py-4">
                 <div className="bg-gray-50 py-4">
                     <div className="container mx-auto">
                         <div

@@ -1,16 +1,16 @@
-import React, {useEffect, useState} from "react";
-import {Link, useLocation, useNavigate} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../logo.jpg";
 
-const Navbar = () => {
+const Navbar = ({ adjustContent }) => {
     const [isOpen, setIsOpen] = useState(false); // Mobile menu toggle
     const [searchOpen, setSearchOpen] = useState(false); // Mobile search bar toggle
     const [searchQuery, setSearchQuery] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
 
-    const toggleMenu = () => setIsOpen(!isOpen);
-    const toggleSearch = () => setSearchOpen(!searchOpen);
+    const toggleMenu = () => setIsOpen((prev) => !prev);
+    const toggleSearch = () => setSearchOpen((prev) => !prev);
 
     const handleSearch = async (e) => {
         e.preventDefault();
@@ -25,6 +25,11 @@ const Navbar = () => {
     };
 
     useEffect(() => {
+        // Adjust content only when the search bar is open
+        adjustContent(searchOpen);
+    }, [searchOpen, adjustContent]);
+
+    useEffect(() => {
         setIsOpen(false); // Close the menu on route change
     }, [location]);
 
@@ -33,7 +38,7 @@ const Navbar = () => {
             <div className="container mx-auto flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center space-x-2">
-                    <img src={logo} alt="logo" className="rounded-full" width="40" height="40"/>
+                    <img src={logo} alt="logo" className="rounded-full" width="40" height="40" />
                     <span className="text-white font-bold text-2xl">K&L</span>
                 </Link>
 
@@ -55,7 +60,6 @@ const Navbar = () => {
                         </button>
                     </form>
                 </div>
-
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-6 font-bold">
@@ -79,10 +83,7 @@ const Navbar = () => {
                 {/* Mobile Icons */}
                 <div className="flex items-center md:hidden space-x-4">
                     {/* Search Icon */}
-                    <button
-                        onClick={toggleSearch}
-                        className="text-white focus:outline-none"
-                    >
+                    <button onClick={toggleSearch} className="text-white focus:outline-none">
                         <svg
                             className="w-6 h-6"
                             fill="none"
@@ -90,15 +91,12 @@ const Navbar = () => {
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
                         >
-                            <circle cx="10" cy="10" r="6" strokeWidth="2"/>
-                            <line x1="15" y1="15" x2="20" y2="20" strokeWidth="2" strokeLinecap="round"/>
+                            <circle cx="10" cy="10" r="6" strokeWidth="2" />
+                            <line x1="15" y1="15" x2="20" y2="20" strokeWidth="2" strokeLinecap="round" />
                         </svg>
                     </button>
                     {/* Hamburger Menu */}
-                    <button
-                        onClick={toggleMenu}
-                        className="text-white focus:outline-none"
-                    >
+                    <button onClick={toggleMenu} className="text-white focus:outline-none">
                         <svg
                             className="w-6 h-6"
                             fill="none"
@@ -145,11 +143,9 @@ const Navbar = () => {
             {/* Mobile Menu */}
             {isOpen && (
                 <div
-                    className="bg-custom-gradient text-white fixed top-0 right-0 h-full w-64 z-40 transform transition-transform duration-300 ease-in-out">
-                    <button
-                        onClick={toggleMenu}
-                        className="absolute top-4 right-4 text-white"
-                    >
+                    className="bg-custom-gradient text-white fixed top-0 right-0 h-full w-64 z-40 transform transition-transform duration-300 ease-in-out"
+                >
+                    <button onClick={toggleMenu} className="absolute top-4 right-4 text-white">
                         <svg
                             className="w-6 h-6"
                             fill="none"

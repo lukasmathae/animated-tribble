@@ -22,14 +22,14 @@ const ArticleDetail = () => {
     }, [id]);
 
     if (!article) {
-        return <div className="flex justify-center items-center h-64 mt-16">
+        return <div className="flex justify-center items-center h-64">
             <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-gray-600"></div>
             <span className="ml-4 text-lg text-gray-600">Loading article...</span>
         </div>;
     }
 
     return (
-        <div className="bg-gray-50 min-h-screenmt-16 mt-14 py-4">
+        <div className="bg-gray-50 py-4">
             <div className="container mx-auto px-6 py-16">
                 <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
                 <p className="text-gray-600 text-sm mb-6">
