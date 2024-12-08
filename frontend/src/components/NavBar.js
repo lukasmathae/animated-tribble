@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Link, useLocation, useNavigate, useParams} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import logo from "../logo.jpg";
 import axios from "axios";
 
@@ -7,10 +7,8 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false); // Mobile menu toggle
     const [searchOpen, setSearchOpen] = useState(false); // Mobile search bar toggle
     const [searchQuery, setSearchQuery] = useState('');
-    const {id} = useParams();
-    const [searchResults, setSearchResults] = useState([]);
     const API_URL = process.env.REACT_APP_API_URL;
-    const endpoint = process.env.NODE_ENV === 'production' ? `${API_URL}/api/news` : `${API_URL}/news`;
+    const endpoint = process.env.NODE_ENV === 'production' ? `${API_URL}/api/search` : `${API_URL}/search`;
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -21,10 +19,9 @@ const Navbar = () => {
         e.preventDefault();
         if (searchQuery.trim()) {
             try {
-                const response = await axios.get(endpoint, {params: {q: searchQuery}});
-                navigate("/search");
+                const response = await axios.get(endpoint, { params: { q: searchQuery } });
+                navigate("/search", { state: { searchResults: response.data } });
                 setSearchQuery("");
-                setSearchResults(response.data);
             } catch (error) {
                 console.error("Error fetching search results:", error);
             }
