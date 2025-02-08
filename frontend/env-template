@@ -1,0 +1,4 @@
+### This is an example of .env file
+### In order to use it, remove this comments and rename this file to ".env"
+NODE_ENV=dev # dev for development, prd for production
+REACT_APP_API_URL="enter off the react url"

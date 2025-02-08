@@ -1,0 +1,4 @@
+### This is an example of .env file
+### In order to use it, remove this comments and rename this file to ".env"
+DATABASE_URL="enter your database url, postgresql://..."
+CLIENT_ORIGIN="enter your client origin, https://..."
